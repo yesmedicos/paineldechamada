@@ -1,4 +1,4 @@
-# Robots.txt for tv.yes.med.br
+# Robots.txt for paineldechamada.com.br
 User-agent: *
 Allow: /
 
@@ -28,4 +28,4 @@ User-agent: Omgilibot
 Allow: /
 
 # Sitemap location
-Sitemap: https://tv.yes.med.br/sitemap.xml
+Sitemap: https://paineldechamada.com.br/sitemap.xml
