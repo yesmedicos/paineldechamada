@@ -1073,7 +1073,7 @@ function ssGoTo(n) {
   ssSlides[ssCur].classList.add('active');
   ssDots[ssCur].classList.add('active');
 }
-function ssAuto() { ssTmr = setInterval(() => ssGoTo(ssCur + 1), 5000); }
+function ssAuto() { ssTmr = setInterval(() => ssGoTo(ssCur + 1), 3000); }
 
 document.getElementById('ssNext').addEventListener('click', () => { clearInterval(ssTmr); ssGoTo(ssCur + 1); ssAuto(); });
 document.getElementById('ssPrev').addEventListener('click', () => { clearInterval(ssTmr); ssGoTo(ssCur - 1); ssAuto(); });
