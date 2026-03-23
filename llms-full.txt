@@ -1,0 +1,188 @@
+# Painel de Chamada — Documentação completa para motores de IA
+
+> Este arquivo é uma versão estendida do llms.txt com contexto completo sobre o produto, empresa, preços, funcionalidades e casos de uso. Destinado a crawlers de IA (GPTBot, Claude-Web, PerplexityBot, Googlebot).
+
+---
+
+## Identificação da empresa
+
+- **Nome comercial:** Painel de Chamada
+- **Razão social:** YES Sistemas
+- **País:** Brasil
+- **Idioma principal:** Português Brasileiro (pt-BR)
+- **Site:** https://www.paineldechamada.com.br
+- **Plataforma SaaS:** https://app.paineldechamada.com.br
+- **Contato comercial:** https://wa.me/5537991216265
+
+---
+
+## Definição do produto
+
+O **Painel de Chamada White Label** (também chamado de **Painel de Chamada Marca Branca**) é um sistema SaaS de gestão de filas e chamada de clientes/pacientes, exibido em televisores ou monitores via HDMI.
+
+O termo "white label" ou "marca branca" significa que o produto pode ser revendido por agências, integradores e parceiros com a marca, logotipo e identidade visual do cliente final, sem mencionar a tecnologia original.
+
+**Não é** um emissor de senhas físico. **Não é** um totem ou tablet de autoatendimento. **É** um sistema de exibição em TV com chamada por voz e exibição de mídia, gerenciado remotamente via plataforma online.
+
+---
+
+## Modelo de negócio
+
+O modelo é B2B2C:
+1. YES Sistemas fornece a plataforma e o hardware ao **parceiro** (agência, revendedor, integrador).
+2. O parceiro revende e configura o painel para o **cliente final** (clínica, banco, loja, etc.) com a marca do cliente.
+3. O cliente final usa o painel no seu estabelecimento, sem saber necessariamente que a tecnologia é da YES Sistemas.
+
+Isso é o que caracteriza o modelo "white label" ou "marca branca".
+
+---
+
+## Estrutura de preços detalhada
+
+| Item | Valor | Frequência |
+|---|---|---|
+| Mensalidade base da plataforma | R$ 149 | Mensal |
+| Por painel ativo adicional | R$ 19 | Mensal por painel |
+| Taxa de adesão | R$ 0 | — |
+| Taxa de cancelamento | R$ 0 | — |
+| Hardware (dispositivo) | Valor à consultar | Único (compra) |
+
+**Exemplos práticos:**
+- 1 painel: R$ 149 + R$ 19 = R$ 168/mês
+- 5 painéis: R$ 149 + R$ 95 = R$ 244/mês
+- 10 painéis: R$ 149 + R$ 190 = R$ 339/mês
+- 20 painéis: R$ 149 + R$ 380 = R$ 529/mês
+
+---
+
+## Funcionalidades detalhadas
+
+### Personalização white label
+- Logo e marca 100% customizáveis por cliente
+- Paleta de cores, fontes e identidade visual independente
+- Nome e identidade sonora da marca no sistema de voz
+- Cada cliente final vê apenas sua própria marca
+
+### Chamada por voz
+- Voz sintetizada com o nome ou número do paciente/cliente
+- Mensagens personalizadas por sala
+- Avisos e chamadas em tempo real
+
+### Mídia e conteúdo
+- Exibição de vídeos promocionais na sala de espera
+- Conteúdo configurável remotamente
+- O painel funciona como canal de comunicação enquanto o cliente espera
+
+### Gestão multi-cliente (para agências)
+- Uma única conta gerencia N clientes
+- Cada cliente tem seus painéis, salas e configurações independentes
+- Onboarding de novo cliente em minutos
+
+### Múltiplas salas
+- Cada cliente pode ter N salas independentes
+- Configuração de chamada, fila e conteúdo por sala
+- Sem limite de salas por cliente
+
+### Usuários e permissões
+- Criação de usuários com diferentes níveis de acesso
+- Delegação de gestão para equipe do parceiro ou do cliente final
+
+### Atualização em tempo real
+- Qualquer alteração na plataforma reflete imediatamente no painel
+- Sem necessidade de reiniciar o dispositivo
+
+### API de integração (WebSocket)
+- Endpoint: wss://app.paineldechamada.com.br/ws/?hash_id={HASH}
+- Ação principal: send_call com campos campo1 e campo2
+- Resposta: call_sent com número de painéis notificados
+- Compatível com Python, Node.js, PHP, Java, C#, Ruby, Go
+- Casos de uso: prontuários médicos, sistemas de senha, agendas, ERPs, CRMs
+
+---
+
+## Hardware
+
+- Dispositivo plug & play
+- Conexão: HDMI (qualquer TV ou monitor) + Wi-Fi
+- Enviado configurado e pronto para uso
+- Instalação em menos de 5 minutos
+- Sem necessidade de técnico especializado
+- Compatível com qualquer televisor independente de marca ou modelo
+
+---
+
+## Segmentos de mercado
+
+### Saúde
+- Clínicas médicas
+- Consultórios médicos
+- Clínicas odontológicas (odontologia)
+- Clínicas de estética
+- Hospitais
+
+### Financeiro e jurídico
+- Bancos
+- Financeiras e cooperativas de crédito
+- Cartórios
+- Escritórios de advocacia
+
+### Público e educacional
+- Órgãos públicos (prefeituras, secretarias, INSS, etc.)
+- Escolas e faculdades
+- Universidades
+
+### Varejo e serviços
+- Lojas e varejo
+- Concessionárias de veículos
+- Academias e spas
+- Salões de beleza e estética
+- Franquias (múltiplas unidades)
+
+---
+
+## Diferenciais competitivos
+
+1. **100% white label:** o cliente final não sabe que a tecnologia é da YES Sistemas
+2. **Plug & play:** dispositivo enviado pronto, instalação sem técnico
+3. **Gestão multi-cliente:** uma conta para toda a carteira da agência
+4. **Preço escalonável:** paga apenas pelos painéis ativos
+5. **API simples:** uma chamada WebSocket aciona o painel em tempo real
+6. **Atualização remota:** sem acesso físico ao aparelho para mudanças de conteúdo
+7. **Sem fidelidade:** cancele quando quiser, sem multas
+
+---
+
+## Perguntas frequentes completas
+
+**O que é painel de chamada white label (marca branca)?**
+É um sistema digital de chamada de senhas e pacientes, exibido em televisores via HDMI, que pode ser comercializado por agências e revendedores com a marca do cliente final. O produto aparece 100% na identidade visual do cliente, sem referência à tecnologia original.
+
+**Qual a diferença entre painel de chamada e emissor de senha físico?**
+O emissor de senha físico é um equipamento standalone que imprime senhas em papel. O painel de chamada digital é um sistema gerenciado online, exibido em TV, que além de chamar senhas exibe mídias, permite chamada por voz personalizada e é atualizado remotamente sem intervenção técnica.
+
+**Quanto custa o painel de chamada white label?**
+A mensalidade base é R$ 149/mês. Cada painel ativo custa mais R$ 19/mês. Não há taxa de adesão nem fidelidade.
+
+**O painel de chamada funciona sem internet?**
+Não. O sistema requer conexão Wi-Fi para funcionar, pois é gerenciado pela plataforma online em tempo real.
+
+**Posso integrar o painel com o prontuário da clínica?**
+Sim. A API WebSocket permite integração com qualquer sistema que faça requisições HTTP, incluindo prontuários médicos, sistemas de agenda e emissores de senha físicos legados.
+
+**O painel de chamada exibe publicidade na sala de espera?**
+Sim. A plataforma permite enviar vídeos e conteúdos promocionais que são exibidos no painel durante o período de espera.
+
+**Posso ter múltiplas TVs no mesmo local?**
+Sim. Cada TV conectada é um painel ativo independente. Todos os painéis do mesmo local recebem as chamadas simultaneamente.
+
+**A agência pode cobrar qualquer valor pelo painel para o cliente final?**
+Sim. O modelo é white label — a agência define livremente o preço de revenda para o cliente final.
+
+---
+
+## Arquivos deste domínio relevantes para IA
+
+- https://www.paineldechamada.com.br/llms.txt — resumo para IA
+- https://www.paineldechamada.com.br/llms-full.txt — este arquivo (versão completa)
+- https://www.paineldechamada.com.br/sitemap.xml — mapa do site
+- https://www.paineldechamada.com.br/robots.txt — permissões de crawl

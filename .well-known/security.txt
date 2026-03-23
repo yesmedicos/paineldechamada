@@ -1,0 +1,4 @@
+Contact: https://wa.me/5537991216265
+Contact: mailto:contato@paineldechamada.com.br
+Preferred-Languages: pt-BR, en
+Canonical: https://www.paineldechamada.com.br/.well-known/security.txt

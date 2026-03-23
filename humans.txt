@@ -1,0 +1,17 @@
+/* TEAM */
+Empresa: YES Sistemas
+Site: https://www.paineldechamada.com.br
+Contato: contato@paineldechamada.com.br
+Localização: Brasil
+
+/* PRODUTO */
+Nome: Painel de Chamada White Label
+Descrição: Plataforma SaaS de painel de chamada e espera digital, marca branca, para agências e empresas no Brasil.
+Versão: 2.0
+Última atualização: 2025/01/01
+Linguagens: Português Brasileiro (pt-BR)
+
+/* TECNOLOGIA */
+Plataforma: Web (HTML5, CSS3, JavaScript)
+Compatibilidade: Chrome, Firefox, Safari, Edge
+Hardware: Dispositivo plug & play via HDMI

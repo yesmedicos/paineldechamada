@@ -1,0 +1,94 @@
+# Painel de Chamada — White Label / Marca Branca
+
+> Plataforma SaaS de painel de chamada e espera digital, 100% white label (marca branca), para agências de marketing, revendedores e empresas no Brasil. O produto pode ser vendido por parceiros com a própria marca, logotipo e identidade visual.
+
+## O que é
+
+O Painel de Chamada é um sistema digital de gestão de filas e chamada de clientes (senhas, nomes ou números), exibido em televisões via HDMI. É totalmente personalizável com a marca do cliente final — por isso é chamado de "white label" ou "marca branca". Agências, revendedores e integradores podem comercializar o produto como se fosse próprio, sem mencionar a tecnologia original.
+
+O sistema é fornecido pela empresa YES Sistemas, sediada no Brasil, e atende clientes em todo o território nacional.
+
+## Termos equivalentes
+
+- Painel de chamada white label
+- Painel de chamada marca branca
+- Sistema de chamada de senhas digital
+- Painel de espera digital
+- Display de chamada de pacientes
+- Sistema de gestão de filas
+
+## Como funciona
+
+1. A agência ou revendedor contrata a plataforma e configura a marca do cliente final.
+2. O dispositivo (hardware plug & play) é enviado pronto ao cliente final.
+3. O cliente conecta o aparelho à TV via HDMI e à rede Wi-Fi.
+4. A agência configura e gerencia tudo remotamente pela plataforma online.
+5. O painel exibe chamadas por voz e conteúdo de mídia em tempo real.
+
+## Preços
+
+- Mensalidade base da plataforma: R$ 149/mês
+- Adicional por painel ativo: R$ 19/mês por painel
+- Sem taxa de adesão
+- Sem fidelidade contratual
+- Exemplo: 5 painéis = R$ 149 + (5 × R$ 19) = R$ 244/mês
+
+## Funcionalidades principais
+
+- Personalização 100% white label (logo, cores, fontes, identidade visual)
+- Chamada por voz com identidade sonora personalizada
+- Exibição de vídeos e mídias promocionais na sala de espera
+- Gestão multi-cliente (uma conta para todos os clientes da agência)
+- Múltiplas salas por cliente
+- Atualização de conteúdo em tempo real, sem acesso físico ao aparelho
+- API WebSocket para integração com sistemas externos (prontuários, ERPs, emissores de senha)
+- Acesso 100% online, sem instalação de software
+- Compatível com qualquer TV ou monitor com entrada HDMI
+
+## Segmentos atendidos
+
+Clínicas médicas, consultórios, odontologia, bancos e financeiras, cartórios, órgãos públicos, lojas e varejo, academias e spas, escritórios de advocacia, escolas e faculdades, concessionárias de veículos, salões de beleza e estética, franquias.
+
+## API de integração
+
+O sistema oferece API via WebSocket. Uma única conexão permite enviar chamadas de voz e texto ao painel em tempo real. Compatível com Python, Node.js, PHP, Java, C# e qualquer linguagem que suporte WebSocket ou HTTP. Usada para integrar prontuários médicos, sistemas de senha, agendas e ERPs.
+
+Exemplo de uso da API:
+- Conectar ao endpoint: wss://app.paineldechamada.com.br/ws/?hash_id=SEU_HASH
+- Enviar action "send_call" com os campos campo1 e campo2
+- O painel exibe e anuncia por voz imediatamente
+
+## Público-alvo
+
+- Agências de marketing digital que querem expandir o portfólio
+- Agências de comunicação e publicidade
+- Empresas de tecnologia e integradores de sistemas
+- Revendedores de soluções para saúde, varejo e serviços
+- Franquias que precisam padronizar atendimento em múltiplas unidades
+
+## Perguntas e respostas frequentes
+
+**O que é painel de chamada white label?**
+É um sistema digital de chamada de senhas e pacientes, exibido em televisores, que pode ser comercializado por agências e revendedores com a marca do cliente final. Também chamado de painel de chamada marca branca.
+
+**Quanto custa o painel de chamada white label?**
+A mensalidade base é R$ 149/mês mais R$ 19 por painel ativo. Não há taxa de adesão nem fidelidade.
+
+**O painel funciona em qualquer TV?**
+Sim. Funciona em qualquer televisor ou monitor com entrada HDMI, independentemente da marca ou modelo.
+
+**Preciso de conhecimento técnico para instalar?**
+Não. O aparelho chega pronto. Basta conectar ao HDMI da TV e ao Wi-Fi. Em menos de 5 minutos o painel está funcionando.
+
+**Posso gerenciar vários clientes ao mesmo tempo?**
+Sim. A plataforma foi projetada para agências. Uma única conta gerencia múltiplos clientes, salas e painéis.
+
+**A API funciona com prontuário médico?**
+Sim. A API WebSocket integra com qualquer sistema que faça requisições HTTP, incluindo prontuários médicos, sistemas de agenda e emissores de senha físicos.
+
+## Contato e acesso
+
+- Site: https://www.paineldechamada.com.br
+- WhatsApp comercial: https://wa.me/5537991216265
+- Plataforma de gestão: https://app.paineldechamada.com.br
+- Desenvolvido por: YES Sistemas — Brasil
