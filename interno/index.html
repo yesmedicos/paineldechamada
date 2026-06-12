@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit Comercial — Painel de Chamada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1424; --navy2:#101D33; --indigo:#4F5BF0; --cyan:#37C8F0;
+  --ink:#13203A; --gray:#5A6B85; --light:#F2F5FB; --card:#F7F9FD;
+  --border:#DCE4F2; --green:#0E9F6E; --warn:#B45309; --warnbg:#FEF3C7; --softwh:#C8D3E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#EDF1F8;color:var(--ink);font-size:15px;line-height:1.55}
+
+/* topo */
+.hero{background:var(--navy);border-bottom:4px solid var(--indigo);padding:42px 20px 100px}
+.wrap{max-width:1040px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;margin-bottom:30px}
+.logo .tv{width:34px;height:24px;background:var(--indigo);border-radius:4px;color:#fff;font-weight:800;
+  font-size:11px;display:flex;align-items:center;justify-content:center;position:relative}
+.logo .tv::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%);
+  width:15px;height:3px;background:var(--indigo);border-radius:1px}
+.logo .name{font-weight:800;font-size:18px;color:#fff;line-height:1.1}
+.logo .tag{font-weight:500;font-size:9px;letter-spacing:.08em;color:var(--cyan)}
+.hero .kick{color:var(--cyan);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{color:#fff;font-size:34px;font-weight:800;margin:6px 0 10px}
+.hero p{color:var(--softwh);max-width:680px}
+
+/* busca */
+.search{max-width:1040px;margin:-26px auto 0;padding:0 20px;position:relative;z-index:5}
+.search input{width:100%;border:1px solid var(--border);border-radius:14px;padding:16px 20px;
+  font:500 15px 'Inter',sans-serif;box-shadow:0 6px 22px rgba(10,20,40,.12);outline:none}
+.search input:focus{border-color:var(--indigo)}
+
+/* corpo */
+main{max-width:1040px;margin:0 auto;padding:30px 20px 70px}
+.etapa{margin-top:34px}
+.etapa .et-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.etapa .num{color:var(--indigo);font-weight:800;font-size:13px;letter-spacing:.05em}
+.etapa h2{font-size:21px;font-weight:800}
+.etapa .et-desc{color:var(--gray);font-size:13.5px;margin-bottom:14px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.cards{grid-template-columns:1fr}.hero h1{font-size:26px}}
+
+a.doc{display:block;background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;
+  text-decoration:none;color:var(--ink);transition:transform .12s, box-shadow .12s, border-color .12s;position:relative}
+a.doc:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(20,30,60,.12);border-color:var(--indigo)}
+a.doc h3{font-size:15.5px;font-weight:700;margin-bottom:5px;padding-right:80px}
+a.doc .desc{font-size:13px;color:var(--gray);margin-bottom:9px}
+a.doc .purpose{font-size:12.5px;background:var(--light);border-left:3px solid var(--indigo);
+  border-radius:0 8px 8px 0;padding:7px 11px;color:var(--ink)}
+a.doc .purpose b{color:var(--indigo)}
+.badge{position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;letter-spacing:.04em;
+  border-radius:99px;padding:4px 10px}
+.b-int{background:var(--navy);color:var(--cyan)}
+.b-env{background:#E8EBFE;color:var(--indigo)}
+.b-wl{background:var(--greenbg,#E6F7F0);color:var(--green)}
+.b-warn{background:var(--warnbg);color:var(--warn)}
+
+.aviso{margin-top:38px;background:var(--warnbg);border:1px solid #F0D48A;border-radius:14px;padding:16px 20px;font-size:13.5px;color:#7C4A02}
+.aviso b{color:var(--warn)}
+.rodape{margin-top:34px;text-align:center;color:var(--gray);font-size:12.5px}
+.legenda{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;font-size:11.5px;color:var(--gray);align-items:center}
+.legenda .badge{position:static}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="logo">
+      <div class="tv">A1</div>
+      <div><div class="name">Painel de Chamada</div><div class="tag">TECNOLOGIA WHITE LABEL</div></div>
+    </div>
+    <div class="kick">Kit comercial · Parcerias com agências</div>
+    <h1>Central de materiais de venda</h1>
+    <p>Tudo o que você precisa para prospectar, apresentar, fechar e ativar parcerias — organizado na ordem do funil.
+    Clique em qualquer documento para abrir. Os editáveis têm campos clicáveis e botão "Salvar como PDF".</p>
+    <div class="legenda">
+      Legenda:
+      <span class="badge b-int">USO INTERNO</span> nunca enviar para fora ·
+      <span class="badge b-env">ENVIAR / APRESENTAR</span> pode ir para a agência ou cliente ·
+      <span class="badge b-wl">WHITE LABEL</span> a agência usa com a marca dela
+    </div>
+  </div>
+</div>
+
+<div class="search">
+  <input type="text" id="busca" placeholder="🔍 Buscar documento... (ex.: proposta, objeções, pet shop)" oninput="filtrar()">
+</div>
+
+<main>
+
+  <!-- ETAPA 1 -->
+  <section class="etapa">
+    <div class="et-head"><span class="num">ETAPA 1</span><h2>Prospecção</h2></div>
+    <p class="et-desc">Encontrar agências qualificadas e conseguir a reunião.</p>
+    <div class="cards">
+
+      <a class="doc" href="funil-lista-qualificada-agencias.html">
+        <span class="badge b-int">USO INTERNO</span>
+        <h3>Funil e lista qualificada de agências</h3>
+        <p class="desc">Tabela editável com critérios de qualificação (carteira local, produção de conteúdo, presença física), status do funil e próxima ação de cada lead.</p>
+        <div class="purpose"><b>Quando usar:</b> antes de qualquer contato. Toda agência entra aqui primeiro; revisar toda segunda-feira. Linha sem "próxima ação + data" é lead morrendo.</div>
+      </a>
+
+      <a class="doc" href="scripts-prospeccao-agencias.html">
+        <span class="badge b-int">USO INTERNO</span>
+        <h3>Scripts de prospecção</h3>
+        <p class="desc">6 mensagens prontas com botão Copiar: primeiro contato (2 variações), follow-ups, e-mail, convite de demo e pós-demo — mais a cadência de envio recomendada.</p>
+        <div class="purpose"><b>Quando usar:</b> em todo contato com agência nova. Troque os campos [entre colchetes] e personalize a primeira linha com algo real do Instagram da agência.</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ETAPA 2 -->
+  <section class="etapa">
+    <div class="et-head"><span class="num">ETAPA 2</span><h2>Reunião e demonstração</h2></div>
+    <p class="et-desc">Conduzir a demo de 20 minutos e mostrar a margem com os números da própria agência.</p>
+    <div class="cards">
+
+      <a class="doc" href="roteiro-demonstracao-20min.html">
+        <span class="badge b-int">USO INTERNO</span>
+        <h3>Roteiro da demonstração (20 min)</h3>
+        <p class="desc">Passo a passo cronometrado da reunião: diagnóstico, painel ao vivo, dashboard, números e fechamento — com falas prontas, checklist pré-reunião e sinais de compra.</p>
+        <div class="purpose"><b>Quando usar:</b> aberto ao lado do notebook em toda demo. Objetivo único da reunião: sair com um cliente piloto definido.</div>
+      </a>
+
+      <a class="doc" href="calculadora-margem-agencia.html">
+        <span class="badge b-env">APRESENTAR</span>
+        <h3>Calculadora de margem da agência</h3>
+        <p class="desc">Ferramenta interativa: arraste os controles (nº de painéis, mensalidade, taxa de instalação) e veja receita, custo, margem mensal e projeção de 12 meses na hora.</p>
+        <div class="purpose"><b>Quando usar:</b> no meio da demo, preenchida com os números que o dono da agência falou. Depois, salvar como PDF e deixar com ele.</div>
+      </a>
+
+      <a class="doc" href="folha-objecoes-respostas.html">
+        <span class="badge b-int">USO INTERNO</span>
+        <h3>Folha de objeções e respostas</h3>
+        <p class="desc">As 10 objeções mais comuns ("não trabalho com TI", "meu cliente não paga", "e o suporte?") com resposta curta e a pergunta que devolve o controle da conversa.</p>
+        <div class="purpose"><b>Quando usar:</b> estudar antes das reuniões e consultar durante calls. Nunca enviar para a agência.</div>
+      </a>
+
+      <a class="doc" href="guia-comercial-para-agencia.html">
+        <span class="badge b-env">ENVIAR</span>
+        <h3>Proposta de parceria (6 páginas)</h3>
+        <p class="desc">A apresentação completa do modelo: o produto, os 4 motivos para a agência, tabela de preços (R$350 + tiers), margens simuladas, fluxo da mídia via YouTube e condições.</p>
+        <div class="purpose"><b>Quando usar:</b> enviar em PDF logo após a demo (em até 24h), junto com a mensagem de pós-demo propondo o piloto.</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ETAPA 3 -->
+  <section class="etapa">
+    <div class="et-head"><span class="num">ETAPA 3</span><h2>Fechamento</h2></div>
+    <p class="et-desc">Formalizar a parceria.</p>
+    <div class="cards">
+
+      <a class="doc" href="contrato-parceria-rascunho.html">
+        <span class="badge b-warn">RASCUNHO ⚠</span>
+        <h3>Contrato de parceria (minuta)</h3>
+        <p class="desc">Estrutura de contrato de revenda white label: objeto, confidencialidade, obrigações, tabela de preços, aparelhos, LGPD, vigência sem fidelidade e foro. Campos editáveis.</p>
+        <div class="purpose"><b>Quando usar:</b> SOMENTE após revisão do advogado. Até lá, serve como base de discussão jurídica — não assinar nesta forma.</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ETAPA 4 -->
+  <section class="etapa">
+    <div class="et-head"><span class="num">ETAPA 4</span><h2>Ativação do parceiro</h2></div>
+    <p class="et-desc">Garantir que a agência acerte o primeiro cliente — é o que evita abandono da parceria.</p>
+    <div class="cards">
+
+      <a class="doc" href="guia-onboarding-agencia.html">
+        <span class="badge b-env">ENVIAR</span>
+        <h3>Guia de onboarding do parceiro</h3>
+        <p class="desc">7 passos do contrato ao go-live: acesso ao dashboard, cadastro do cliente, playlists do YouTube, pedido do aparelho, instalação (HDMI + Wi-Fi), extensão Chrome e checklist do dia.</p>
+        <div class="purpose"><b>Quando usar:</b> enviar para toda agência logo após a assinatura. Acompanhar a primeira instalação de perto, pelo WhatsApp.</div>
+      </a>
+
+      <a class="doc" href="proposta-parceria-painel-de-chamada.html">
+        <span class="badge b-wl">WHITE LABEL</span>
+        <h3>Proposta da agência → cliente final</h3>
+        <p class="desc">Proposta de 2 páginas sem a nossa marca: a agência clica para enviar a própria logo, escolhe a cor de destaque e edita nome do cliente, valores e contato.</p>
+        <div class="purpose"><b>Quando usar:</b> entregar à agência no onboarding como parte do kit de revenda. É com ela que a agência fecha os clientes dela.</div>
+      </a>
+
+      <a class="doc" href="folheto-revenda-agencia-white-label.html">
+        <span class="badge b-wl">WHITE LABEL</span>
+        <h3>Folheto de revenda (1 página)</h3>
+        <p class="desc">Material de divulgação que a agência usa com a marca dela: benefícios por segmento, preço editável e telefone de contato. Logo enviável por clique.</p>
+        <div class="purpose"><b>Quando usar:</b> entregar à agência no onboarding. Serve para ela deixar com prospects após visitas e divulgar o novo produto.</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ETAPA 5 -->
+  <section class="etapa">
+    <div class="et-head"><span class="num">ETAPA 5</span><h2>Venda direta (sem agência)</h2></div>
+    <p class="et-desc">Para quando um cliente final procura a gente diretamente.</p>
+    <div class="cards">
+
+      <a class="doc" href="proposta-direta-cliente-final.html">
+        <span class="badge b-env">ENVIAR</span>
+        <h3>Proposta direta — cliente final (qualquer segmento)</h3>
+        <p class="desc">Proposta de 2 páginas com a nossa marca, genérica para pet shop, clínica, restaurante, loja etc. Valores editáveis (R$697 + R$249/mês) e área de aceite.</p>
+        <div class="purpose"><b>Quando usar:</b> cliente final que chega direto, sem agência. Adapte em 3 cliques: nome do estabelecimento, a palavra "cliente" (paciente, pet...) e o exemplo de chamada da abertura. Salvar como PDF e enviar.</div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="aviso">
+    <b>Lembretes importantes:</b> (1) O contrato é um rascunho — não assinar sem advogado.
+    (2) Documentos "uso interno" nunca vão para agências ou clientes.
+    (3) Em todos os editáveis: campos lilás tracejados são clicáveis; o destaque some no PDF.
+    Para gerar PDF: Chrome → Imprimir → margens "Nenhuma" → "Gráficos de fundo" ativado.
+    (4) O que for digitado nos arquivos não fica salvo ao fechar — edite e salve o PDF na hora.
+  </div>
+
+  <p class="rodape">Kit comercial Painel de Chamada · paineldechamada.com.br · WhatsApp (37) 99121-6265</p>
+</main>
+
+<script>
+function filtrar(){
+  const q = document.getElementById('busca').value.toLowerCase().trim();
+  document.querySelectorAll('a.doc').forEach(c=>{
+    c.classList.toggle('hidden', q && !c.innerText.toLowerCase().includes(q));
+  });
+  document.querySelectorAll('.etapa').forEach(s=>{
+    const vivos = s.querySelectorAll('a.doc:not(.hidden)').length;
+    s.classList.toggle('hidden', vivos === 0);
+  });
+}
+</script>
+</body>
+</html>

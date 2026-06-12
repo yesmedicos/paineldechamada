@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Onboarding do Parceiro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1424; --navy2:#101D33; --indigo:#4F5BF0; --cyan:#37C8F0;
+  --ink:#13203A; --gray:#5A6B85; --light:#F2F5FB; --card:#F7F9FD;
+  --border:#DCE4F2; --green:#0E9F6E; --greenbg:#E6F7F0; --softwh:#C8D3E8;
+  --warn:#B45309; --warnbg:#FEF3C7; --accent:var(--indigo);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#E5E9F2;color:var(--ink);font-size:10pt;line-height:1.5}
+.page{width:210mm;min-height:297mm;margin:10mm auto;background:#fff;position:relative;
+      padding:16mm 14mm 18mm;box-shadow:0 2px 14px rgba(10,20,40,.15);display:flow-root}
+.page.dark{background:var(--navy);color:#fff}
+
+/* barra de instruções e botão imprimir — não saem no PDF */
+.editbar{max-width:210mm;margin:14px auto 0;background:#fff;border:1px solid var(--border);
+  border-left:4px solid var(--accent);border-radius:8px;padding:13px 18px;font-size:9.5pt;color:var(--gray)}
+.editbar b{color:var(--ink)}
+.toolbar{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:8px}
+.toolbar button,.toolbar label{background:var(--accent);color:#fff;border:none;border-radius:99px;
+  padding:9px 18px;font:700 9.5pt 'Inter',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(20,30,60,.25)}
+.toolbar .alt{background:var(--ink)}
+
+/* campos editáveis: destaque na tela, limpo na impressão */
+[contenteditable]{outline:none;border-bottom:1.5px dashed var(--accent);background:rgba(79,91,240,.07);
+  border-radius:3px;padding:0 3px;transition:background .15s;min-width:1ch;display:inline-block}
+[contenteditable]:hover{background:rgba(79,91,240,.16)}
+[contenteditable]:focus{background:#FFF7D6;border-bottom-color:var(--warn)}
+
+.head{display:flex;justify-content:space-between;align-items:center;background:var(--navy);
+  margin:-16mm -14mm 10mm;padding:8mm 14mm;border-bottom:3px solid var(--accent)}
+.head .crumb{color:var(--softwh);font-size:8.5pt;font-weight:500}
+.foot{position:absolute;bottom:8mm;left:14mm;right:14mm;display:flex;justify-content:space-between;
+  font-size:8pt;color:var(--gray)}
+.page.dark .foot{color:#6E7FA0}
+
+.logo{display:flex;align-items:center;gap:9px}
+.logo .tv{width:30px;height:21px;background:var(--accent);border-radius:4px;color:#fff;font-weight:800;
+  font-size:8.5pt;display:flex;align-items:center;justify-content:center;position:relative}
+.logo .tv::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  width:13px;height:3px;background:var(--accent);border-radius:1px}
+.logo .name{font-weight:800;font-size:12.5pt;color:#fff;line-height:1.1}
+.logo .tag{font-weight:500;font-size:6.5pt;letter-spacing:.08em;color:var(--cyan)}
+.logo.on-light .name{color:var(--ink)}
+.logo.on-light .tag{color:var(--accent)}
+
+.kicker{color:var(--accent);font-size:8.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.dark .kicker{color:var(--cyan)}
+h1{font-size:23pt;font-weight:800;line-height:1.18;margin:4px 0 10px}
+h2{font-size:16pt;font-weight:800;margin:4px 0 8px}
+h3{font-size:11pt;font-weight:700}
+.lead{color:var(--gray);font-size:10.2pt;margin-bottom:14px}
+.dark .lead{color:var(--softwh)}
+.sec{margin-top:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.cardx{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px;break-inside:avoid}
+.cardx.accent{border-left:4px solid var(--accent);border-radius:0 10px 10px 0}
+.cardx h3{font-size:10.3pt;font-weight:700;margin-bottom:4px}
+.cardx p{font-size:8.8pt;color:var(--gray);line-height:1.45}
+.darkbox{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-top:14px}
+.darkbox h3{color:var(--cyan);font-size:10.3pt;margin-bottom:4px}
+.darkbox p{color:var(--softwh);font-size:8.8pt}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:10px}
+.checks div{display:flex;gap:8px;align-items:flex-start;font-size:9.3pt}
+.checks div::before{content:'\2713';flex:0 0 16px;height:16px;background:var(--green);color:#fff;
+  border-radius:50%;font-size:8pt;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.note{font-size:8.4pt;color:var(--gray);margin-top:8px}
+table.tb{width:100%;border-collapse:collapse;border:1px solid var(--border);font-size:9.2pt}
+table.tb th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-size:8.4pt}
+table.tb td{padding:10px 12px;vertical-align:top;border-top:1px solid var(--border)}
+table.tb tr:nth-child(even) td{background:var(--card)}
+.greenbar{background:var(--greenbg);border-radius:10px;padding:12px 16px;margin-top:14px}
+.greenbar b{color:var(--green);font-size:9.8pt}
+.greenbar span{display:block;color:#0B7A56;font-size:8.4pt;margin-top:2px}
+.warnbar{background:var(--warnbg);border:1px solid #F0D48A;border-radius:10px;padding:12px 16px;margin:12px 0}
+.warnbar b{color:var(--warn)}
+.warnbar p{color:#7C4A02;font-size:8.8pt;margin-top:2px}
+.cta{background:var(--navy);border-radius:12px;padding:18px 22px;margin-top:18px}
+.cta h2{color:#fff}.cta p{color:var(--softwh);font-size:9.6pt;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:9.6pt;
+  border-radius:99px;padding:9px 20px;text-decoration:none}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px}
+.sign div{border-top:1.5px solid var(--ink);padding-top:6px;font-size:8.6pt;color:var(--gray);text-align:center}
+
+@media print{
+  body{background:#fff}
+  .editbar,.toolbar,.no-print{display:none!important}
+  .page{margin:0;box-shadow:none;width:auto;page-break-after:always}
+  .page:last-child{page-break-after:auto}
+  [contenteditable]{border-bottom:none;background:transparent;padding:0}
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.passo{display:grid;grid-template-columns:34px 1fr;gap:12px;margin-top:12px;break-inside:avoid}
+.passo .n{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;
+  display:flex;align-items:center;justify-content:center;font-size:11pt}
+.passo h3{font-size:10.3pt;margin-bottom:3px}
+.passo p{font-size:8.9pt;color:var(--gray)}
+.passo .box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 15px}
+</style>
+</head>
+<body>
+<div class="toolbar no-print"><button onclick="imprimir()">🖨 Salvar como PDF</button></div>
+<div class="editbar"><b>Guia do parceiro:</b> envie este arquivo (ou o PDF) para cada agência logo após a assinatura. Ele cobre do primeiro acesso ao go-live do primeiro cliente.</div>
+
+<section class="page">
+  <div class="head"><div class="logo"><div class="tv">A1</div><div><div class="name">Painel de Chamada</div><div class="tag">TECNOLOGIA WHITE LABEL</div></div></div><div class="crumb">Guia de onboarding · parceiro</div></div>
+  <div class="kicker">Bem-vindo, parceiro!</div>
+  <h1>Do contrato ao primeiro painel no ar</h1>
+  <p class="lead">Este guia leva sua agência da assinatura até o primeiro cliente funcionando. Tempo total
+  estimado: <b>uma tarde de configuração + uma visita de instalação</b>. Nosso time acompanha tudo pelo WhatsApp.</p>
+
+  <div class="passo"><div class="n">1</div><div class="box"><h3>Acesse seu dashboard</h3><p>Você receberá login e senha por e-mail. O dashboard é onde sua agência gerencia todos os clientes em uma única conta: mídia, mensagens, cores e vozes — sem trocar de login.</p></div></div>
+  <div class="passo"><div class="n">2</div><div class="box"><h3>Cadastre o primeiro cliente</h3><p>Crie o cliente no dashboard e configure a identidade: logomarca, cores e a voz de chamada. Qualquer alteração reflete no painel em tempo real, mesmo antes da instalação.</p></div></div>
+  <div class="passo"><div class="n">3</div><div class="box"><h3>Monte as playlists no YouTube</h3><p>Os vídeos do cliente ficam em playlists no YouTube (no canal do cliente ou da agência). Crie uma ou mais playlists e cadastre os links no dashboard. Atualizou a playlist no YouTube, atualizou a tela — sem uploads.</p></div></div>
+  <div class="passo"><div class="n">4</div><div class="box"><h3>Peça o aparelho</h3><p>Solicite a ativação pelo nosso WhatsApp informando o cliente. O aparelho segue para a sua agência já configurado e vinculado ao cliente (taxa de ativação: R$ 350).</p></div></div>
+  <div class="passo"><div class="n">5</div><div class="box"><h3>Instale no cliente (5 minutos)</h3><p>Na visita: conecte o aparelho na entrada HDMI da TV da recepção, ligue na tomada e conecte ao Wi-Fi do cliente. O painel carrega sozinho com tudo que você configurou. Dica: leve um cabo HDMI extra e confirme a senha do Wi-Fi antes da visita.</p></div></div>
+  <div class="passo"><div class="n">6</div><div class="box"><h3>Configure a chamada no balcão</h3><p>Instale a extensão do Google Chrome nos computadores da recepção — ela dispara chamadas a partir de qualquer sistema que rode no navegador. Cliente com sistema próprio? A integração via API está disponível na documentação.</p></div></div>
+  <div class="passo"><div class="n">7</div><div class="box"><h3>Go-live: teste com o cliente</h3><p>Faça 2–3 chamadas de teste com nomes reais, ajuste o volume da TV e mostre à equipe do cliente como chamar. Tire uma foto do painel no ar — é o seu material de divulgação para vender o próximo.</p></div></div>
+
+  <div class="sec">
+    <div class="kicker">Checklist do dia da instalação</div>
+    <div class="checks">
+      <div>Aparelho + fonte + cabo HDMI (e um reserva)</div>
+      <div>Senha do Wi-Fi do cliente confirmada</div>
+      <div>Marca, cores e voz já configuradas no dashboard</div>
+      <div>Playlist do YouTube cadastrada e testada</div>
+      <div>Extensão Chrome instalada no PC da recepção</div>
+      <div>Equipe do cliente treinada para chamar (2 min)</div>
+    </div>
+  </div>
+
+  <div class="darkbox"><h3>Precisou de ajuda? É só chamar.</h3>
+  <p>Suporte ao parceiro via WhatsApp (37) 99121-6265, em horário comercial. Na primeira instalação,
+  acompanhamos em tempo real — agende o horário da visita com a gente.</p></div>
+  <div class="foot"><span>Guia do parceiro · Painel de Chamada</span><span></span></div>
+</section>
+
+<script>
+function imprimir(){window.print()}
+</script>
+</body>
+</html>

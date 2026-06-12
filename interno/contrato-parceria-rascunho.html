@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contrato de Parceria — RASCUNHO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1424; --navy2:#101D33; --indigo:#4F5BF0; --cyan:#37C8F0;
+  --ink:#13203A; --gray:#5A6B85; --light:#F2F5FB; --card:#F7F9FD;
+  --border:#DCE4F2; --green:#0E9F6E; --greenbg:#E6F7F0; --softwh:#C8D3E8;
+  --warn:#B45309; --warnbg:#FEF3C7; --accent:var(--indigo);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#E5E9F2;color:var(--ink);font-size:10pt;line-height:1.5}
+.page{width:210mm;min-height:297mm;margin:10mm auto;background:#fff;position:relative;
+      padding:16mm 14mm 18mm;box-shadow:0 2px 14px rgba(10,20,40,.15);display:flow-root}
+.page.dark{background:var(--navy);color:#fff}
+
+/* barra de instruções e botão imprimir — não saem no PDF */
+.editbar{max-width:210mm;margin:14px auto 0;background:#fff;border:1px solid var(--border);
+  border-left:4px solid var(--accent);border-radius:8px;padding:13px 18px;font-size:9.5pt;color:var(--gray)}
+.editbar b{color:var(--ink)}
+.toolbar{position:fixed;top:14px;right:14px;z-index:50;display:flex;gap:8px}
+.toolbar button,.toolbar label{background:var(--accent);color:#fff;border:none;border-radius:99px;
+  padding:9px 18px;font:700 9.5pt 'Inter',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(20,30,60,.25)}
+.toolbar .alt{background:var(--ink)}
+
+/* campos editáveis: destaque na tela, limpo na impressão */
+[contenteditable]{outline:none;border-bottom:1.5px dashed var(--accent);background:rgba(79,91,240,.07);
+  border-radius:3px;padding:0 3px;transition:background .15s;min-width:1ch;display:inline-block}
+[contenteditable]:hover{background:rgba(79,91,240,.16)}
+[contenteditable]:focus{background:#FFF7D6;border-bottom-color:var(--warn)}
+
+.head{display:flex;justify-content:space-between;align-items:center;background:var(--navy);
+  margin:-16mm -14mm 10mm;padding:8mm 14mm;border-bottom:3px solid var(--accent)}
+.head .crumb{color:var(--softwh);font-size:8.5pt;font-weight:500}
+.foot{position:absolute;bottom:8mm;left:14mm;right:14mm;display:flex;justify-content:space-between;
+  font-size:8pt;color:var(--gray)}
+.page.dark .foot{color:#6E7FA0}
+
+.logo{display:flex;align-items:center;gap:9px}
+.logo .tv{width:30px;height:21px;background:var(--accent);border-radius:4px;color:#fff;font-weight:800;
+  font-size:8.5pt;display:flex;align-items:center;justify-content:center;position:relative}
+.logo .tv::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);
+  width:13px;height:3px;background:var(--accent);border-radius:1px}
+.logo .name{font-weight:800;font-size:12.5pt;color:#fff;line-height:1.1}
+.logo .tag{font-weight:500;font-size:6.5pt;letter-spacing:.08em;color:var(--cyan)}
+.logo.on-light .name{color:var(--ink)}
+.logo.on-light .tag{color:var(--accent)}
+
+.kicker{color:var(--accent);font-size:8.5pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.dark .kicker{color:var(--cyan)}
+h1{font-size:23pt;font-weight:800;line-height:1.18;margin:4px 0 10px}
+h2{font-size:16pt;font-weight:800;margin:4px 0 8px}
+h3{font-size:11pt;font-weight:700}
+.lead{color:var(--gray);font-size:10.2pt;margin-bottom:14px}
+.dark .lead{color:var(--softwh)}
+.sec{margin-top:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.cardx{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:13px 15px;break-inside:avoid}
+.cardx.accent{border-left:4px solid var(--accent);border-radius:0 10px 10px 0}
+.cardx h3{font-size:10.3pt;font-weight:700;margin-bottom:4px}
+.cardx p{font-size:8.8pt;color:var(--gray);line-height:1.45}
+.darkbox{background:var(--navy);color:#fff;border-radius:10px;padding:14px 18px;margin-top:14px}
+.darkbox h3{color:var(--cyan);font-size:10.3pt;margin-bottom:4px}
+.darkbox p{color:var(--softwh);font-size:8.8pt}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:10px}
+.checks div{display:flex;gap:8px;align-items:flex-start;font-size:9.3pt}
+.checks div::before{content:'\2713';flex:0 0 16px;height:16px;background:var(--green);color:#fff;
+  border-radius:50%;font-size:8pt;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.note{font-size:8.4pt;color:var(--gray);margin-top:8px}
+table.tb{width:100%;border-collapse:collapse;border:1px solid var(--border);font-size:9.2pt}
+table.tb th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-size:8.4pt}
+table.tb td{padding:10px 12px;vertical-align:top;border-top:1px solid var(--border)}
+table.tb tr:nth-child(even) td{background:var(--card)}
+.greenbar{background:var(--greenbg);border-radius:10px;padding:12px 16px;margin-top:14px}
+.greenbar b{color:var(--green);font-size:9.8pt}
+.greenbar span{display:block;color:#0B7A56;font-size:8.4pt;margin-top:2px}
+.warnbar{background:var(--warnbg);border:1px solid #F0D48A;border-radius:10px;padding:12px 16px;margin:12px 0}
+.warnbar b{color:var(--warn)}
+.warnbar p{color:#7C4A02;font-size:8.8pt;margin-top:2px}
+.cta{background:var(--navy);border-radius:12px;padding:18px 22px;margin-top:18px}
+.cta h2{color:#fff}.cta p{color:var(--softwh);font-size:9.6pt;margin-bottom:10px}
+.cta .btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:9.6pt;
+  border-radius:99px;padding:9px 20px;text-decoration:none}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px}
+.sign div{border-top:1.5px solid var(--ink);padding-top:6px;font-size:8.6pt;color:var(--gray);text-align:center}
+
+@media print{
+  body{background:#fff}
+  .editbar,.toolbar,.no-print{display:none!important}
+  .page{margin:0;box-shadow:none;width:auto;page-break-after:always}
+  .page:last-child{page-break-after:auto}
+  [contenteditable]{border-bottom:none;background:transparent;padding:0}
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+.cl{margin-top:14px;break-inside:avoid}
+.cl h3{font-size:10pt;margin-bottom:5px}
+.cl p, .cl li{font-size:9pt;color:var(--ink);line-height:1.55;text-align:justify}
+.cl ol{margin:4px 0 0 18px}
+</style>
+</head>
+<body>
+<div class="toolbar no-print"><button onclick="imprimir()">🖨 Salvar como PDF</button></div>
+<div class="editbar"><b>Minuta editável</b> — preencha os campos tracejados e leve ao seu advogado. O aviso de rascunho permanece visível também no PDF, de propósito: remova-o apenas após a revisão jurídica.</div>
+
+<section class="page">
+  <div class="head"><div class="logo"><div class="tv">A1</div><div><div class="name">Painel de Chamada</div><div class="tag">TECNOLOGIA WHITE LABEL</div></div></div><div class="crumb">Contrato de parceria · rascunho</div></div>
+  <div class="warnbar"><b>⚠ RASCUNHO — NÃO UTILIZAR SEM REVISÃO JURÍDICA.</b>
+  <p>Este documento é uma estrutura de partida para discussão com o seu advogado. Não constitui aconselhamento
+  jurídico e não deve ser assinado nesta forma.</p></div>
+
+  <div class="kicker">Minuta para revisão do jurídico</div>
+  <h1>Contrato de parceria comercial — revenda white label</h1>
+
+  <p class="lead" style="margin-top:8px">Pelo presente instrumento, de um lado <b><span contenteditable="true">[RAZÃO SOCIAL DA CONTRATADA]</span></b>,
+  CNPJ <span contenteditable="true">[CNPJ]</span>, doravante <b>PLATAFORMA</b>; e de outro <b><span contenteditable="true">[RAZÃO SOCIAL DA AGÊNCIA]</span></b>,
+  CNPJ <span contenteditable="true">[CNPJ]</span>, doravante <b>PARCEIRA</b>, celebram este contrato.</p>
+
+  <div class="cl"><h3>CLÁUSULA 1ª — OBJETO</h3><p>Licenciamento de uso, em regime de revenda white label, da plataforma de painéis digitais de chamada e mídia ("Plataforma"), incluindo dashboard de gestão, extensão de navegador e API, para comercialização pela PARCEIRA, sob marca própria, a seus clientes finais.</p></div>
+  <div class="cl"><h3>CLÁUSULA 2ª — MARCA BRANCA E CONFIDENCIALIDADE</h3><ol><li>A PARCEIRA comercializa a Plataforma sob sua própria marca, definindo livremente os preços ao cliente final.</li><li>A PLATAFORMA não abordará comercialmente os clientes finais da PARCEIRA.</li><li>As partes manterão confidenciais as condições comerciais deste contrato e a relação de fornecimento perante os clientes finais.</li></ol></div>
+  <div class="cl"><h3>CLÁUSULA 3ª — OBRIGAÇÕES DA PLATAFORMA</h3><ol><li>Disponibilizar a Plataforma com nível de disponibilidade mínimo de <span contenteditable="true">[99%]</span> ao mês.</li><li>Fornecer os aparelhos configurados, mediante pagamento da taxa de ativação.</li><li>Prestar suporte técnico de segundo nível à PARCEIRA, via WhatsApp, em horário comercial.</li><li>Treinar a equipe da PARCEIRA no uso do dashboard.</li></ol></div>
+  <div class="cl"><h3>CLÁUSULA 4ª — OBRIGAÇÕES DA PARCEIRA</h3><ol><li>Realizar a venda, a instalação física (conexão à TV e à rede Wi-Fi do cliente) e o relacionamento comercial com seus clientes finais.</li><li>Prestar o atendimento de primeiro nível a seus clientes.</li><li>Utilizar a Plataforma conforme a documentação e a legislação aplicável, respondendo pelo conteúdo exibido nos painéis de seus clientes.</li></ol></div>
+  <div class="foot"><span>Rascunho sujeito a revisão jurídica</span><span>1</span></div>
+</section>
+
+<section class="page">
+  <div class="head"><div class="logo"><div class="tv">A1</div><div><div class="name">Painel de Chamada</div><div class="tag">TECNOLOGIA WHITE LABEL</div></div></div><div class="crumb">Contrato de parceria · rascunho</div></div>
+  <div class="cl"><h3>CLÁUSULA 5ª — PREÇOS E PAGAMENTO</h3><ol><li>Taxa de ativação por aparelho: <b>R$ <span contenteditable="true">350,00</span></b>, paga no pedido de cada unidade.</li><li>Mensalidade por painel ativo, conforme volume total da PARCEIRA: 1 a 10 painéis: <b>R$ <span contenteditable="true">79,90</span></b>; 11 a 20: <b>R$ <span contenteditable="true">64,90</span></b>; acima de 20: <b>R$ <span contenteditable="true">49,90</span></b> por painel/mês, aplicável a todos os painéis ativos.</li><li>Faturamento mensal, vencimento dia <span contenteditable="true">[10]</span>, via <span contenteditable="true">[boleto/PIX]</span>.</li><li>Inadimplência superior a <span contenteditable="true">[15]</span> dias autoriza a suspensão dos painéis até a regularização.</li></ol></div>
+  <div class="cl"><h3>CLÁUSULA 6ª — APARELHOS</h3><ol><li>Os aparelhos são vendidos à PARCEIRA, que assume sua guarda e logística até o cliente final.</li><li>Defeitos de fabricação em até <span contenteditable="true">[12 meses]</span>: substituição pela PLATAFORMA, frete por conta de <span contenteditable="true">[definir]</span>.</li></ol></div>
+  <div class="cl"><h3>CLÁUSULA 7ª — PROPRIEDADE INTELECTUAL</h3><p>O software, a marca da Plataforma e toda a tecnologia permanecem de titularidade exclusiva da PLATAFORMA. Este contrato não transfere propriedade intelectual, apenas licença de uso e revenda.</p></div>
+  <div class="cl"><h3>CLÁUSULA 8ª — PROTEÇÃO DE DADOS (LGPD)</h3><p>As partes tratarão os dados pessoais estritamente para a execução deste contrato, em conformidade com a Lei 13.709/2018, cabendo à PARCEIRA obter as autorizações necessárias de seus clientes finais para exibição de nomes nos painéis.</p></div>
+  <div class="cl"><h3>CLÁUSULA 9ª — VIGÊNCIA E RESCISÃO</h3><ol><li>Vigência por prazo indeterminado, <b>sem fidelidade</b>.</li><li>Qualquer parte pode rescindir mediante aviso de <span contenteditable="true">[30]</span> dias, sem multa.</li><li>Painéis podem ser ativados e desativados a qualquer tempo, cessando a cobrança no ciclo seguinte à desativação.</li></ol></div>
+  <div class="cl"><h3>CLÁUSULA 10ª — DISPOSIÇÕES GERAIS E FORO</h3><p>Este contrato não estabelece vínculo societário, trabalhista ou de representação exclusiva, salvo acordo específico de exclusividade territorial firmado em aditivo com metas de volume. Fica eleito o foro da comarca de <span contenteditable="true">[cidade/UF]</span>.</p></div>
+
+  <p class="lead" style="margin-top:18px"><span contenteditable="true">[Cidade]</span>, <span contenteditable="true">[data]</span>.</p>
+  <div class="sign">
+    <div><span contenteditable="true">[RAZÃO SOCIAL DA CONTRATADA]</span><br>PLATAFORMA</div>
+    <div><span contenteditable="true">[RAZÃO SOCIAL DA AGÊNCIA]</span><br>PARCEIRA</div>
+  </div>
+
+  <div class="warnbar" style="margin-top:22px"><b>⚠ Lembrete final:</b>
+  <p>Submeta esta minuta a um advogado antes de qualquer assinatura — em especial as cláusulas de LGPD,
+  garantia de aparelhos e exclusividade territorial.</p></div>
+  <div class="foot"><span>Rascunho sujeito a revisão jurídica</span><span>2</span></div>
+</section>
+
+<script>
+function imprimir(){window.print()}
+</script>
+</body>
+</html>
